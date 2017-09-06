@@ -1,4 +1,6 @@
-package com.zhh.cg.api;
+package com.zhh.cg;
+
+import com.zhh.cg.api.CodeGenerator;
 
 /**
  * []
