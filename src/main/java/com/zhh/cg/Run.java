@@ -13,6 +13,5 @@ public class Run {
     public static void main(String[] args) {
         CodeGenerator codeGenerator = new CodeGenerator();
         codeGenerator.generate();
-
     }
 }

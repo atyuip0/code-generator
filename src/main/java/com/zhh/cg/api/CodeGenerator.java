@@ -82,7 +82,7 @@ public class CodeGenerator {
         EntityMap entityMap = new EntityMap();
         entityMap.setFtl_create_time(LocalDateTime.now().toString());
         entityMap.setEntityPackage(properties.getProperty("entity_package"));
-        entityMap.setFtl_description(properties.getProperty("ftl_description"));
+        entityMap.setFtl_description(properties.getProperty("bussi_description"));
         entityMap.setBussiPackage("");
         List<Column> columns = new ArrayList<Column>();
         entityMap.setColumns(columns);
@@ -99,7 +99,7 @@ public class CodeGenerator {
                 column.setFieldName(introspectedColumn.getJavaProperty());
                 column.setDefaultValue(introspectedColumn.getDefaultValue());
                 column.setType(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
-                column.setPk("Y");
+                column.setIsPk("Y");
                 columns.add(column);
             }
             for(IntrospectedColumn introspectedColumn : context.getColumns()){
@@ -110,7 +110,7 @@ public class CodeGenerator {
                 column.setFieldName(introspectedColumn.getJavaProperty());
                 column.setDefaultValue(introspectedColumn.getDefaultValue());
                 column.setType(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
-                column.setPk("N");
+                column.setIsPk("N");
                 columns.add(column);
             }
 

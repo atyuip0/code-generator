@@ -1,5 +1,6 @@
 package com.zhh.cg.util;
 
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
@@ -18,7 +19,7 @@ public class PropertiesUtils {
     public static Properties loadProps(String filePath){
         Properties properties = new Properties();
         try {
-            properties.load(PropertiesUtils.class.getResourceAsStream(filePath));
+            properties.load(new InputStreamReader(PropertiesUtils.class.getResourceAsStream(filePath), "UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -87,7 +87,7 @@
                             <tr>
                                 <th class="text-center">序号</th>
                             <#list columns as po>
-                                <#if  po.fieldName!='deleteFlag'&& po.isPk!='Y'>
+                                <#if  po.fieldName!='deleteFlag'&& po.isPk=='N'>
                                 <th class="text-center">${po.content}</th>
                                 </#if>
                             </#list>

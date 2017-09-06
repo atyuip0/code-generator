@@ -30,7 +30,7 @@ public class ${entityName}PO extends BasePO implements java.io.Serializable {
 
 	<#list columns as po>
     /**${po.content}*/
-    <#if po.isNull == 'Y'|| po.isPk == 'Y'>
+    <#if (po.isNull == 'Y'|| po.isPk == 'Y')>
     <#else>
     <#if po.type=='java.lang.String'>
     @NotBlank(message = "请输入${po.content}")

@@ -62,11 +62,11 @@ public class Column {
         this.fieldName = fieldName;
     }
 
-    public String getPk() {
+    public String getIsPk() {
         return isPk;
     }
 
-    public void setPk(String pk) {
+    public void setIsPk(String pk) {
         isPk = pk;
     }
 
