@@ -16,6 +16,10 @@ public class Column {
 
     private String type;
 
+    private String actualColumnName;
+
+    private String jdbcType;
+
     private String fieldName;
 
     private String isPk;
@@ -76,5 +80,21 @@ public class Column {
 
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public String getActualColumnName() {
+        return actualColumnName;
+    }
+
+    public void setActualColumnName(String actualColumnName) {
+        this.actualColumnName = actualColumnName;
+    }
+
+    public String getJdbcType() {
+        return jdbcType;
+    }
+
+    public void setJdbcType(String jdbcType) {
+        this.jdbcType = jdbcType;
     }
 }

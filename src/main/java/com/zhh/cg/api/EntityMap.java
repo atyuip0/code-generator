@@ -18,6 +18,8 @@ public class EntityMap {
 
     private String entityName;
 
+    private String tableName;
+
     private String ftl_description;
 
     private String ftl_create_time;
@@ -25,6 +27,8 @@ public class EntityMap {
     private List<Column> columns;
 
     private String pk;
+
+    private String pkA;
 
     public String getBussiPackage() {
         return bussiPackage;
@@ -74,11 +78,27 @@ public class EntityMap {
         this.columns = columns;
     }
 
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
     public String getPk() {
         return pk;
     }
 
     public void setPk(String pk) {
         this.pk = pk;
+    }
+
+    public String getPkA() {
+        return pkA;
+    }
+
+    public void setPkA(String pkA) {
+        this.pkA = pkA;
     }
 }

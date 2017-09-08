@@ -89,13 +89,17 @@ public class CodeGenerator {
         try {
             Context context = new Context(properties);
             context.introspectTable();
+            entityMap.setTableName(context.getTableName());
             entityMap.setEntityName(JavaBeansUtil.getCamelCaseString(context.getTableName(),true).substring(1));
             for(IntrospectedColumn introspectedColumn : context.getPrimaryKeyColumns()){
                 entityMap.setPk(introspectedColumn.getJavaProperty());
+                entityMap.setPkA(introspectedColumn.getActualColumnName());
                 Column column = new Column();
                 column.setContent(introspectedColumn.getRemarks());
                 column.setIsNull(introspectedColumn.isNullable() ? "Y" : "N");
                 column.setLength(introspectedColumn.getLength());
+                column.setActualColumnName(introspectedColumn.getActualColumnName());
+                column.setJdbcType(introspectedColumn.getJdbcTypeName());
                 column.setFieldName(introspectedColumn.getJavaProperty());
                 column.setDefaultValue(introspectedColumn.getDefaultValue());
                 column.setType(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
@@ -107,6 +111,8 @@ public class CodeGenerator {
                 column.setContent(introspectedColumn.getRemarks());
                 column.setIsNull(introspectedColumn.isNullable() ? "Y" : "N");
                 column.setLength(introspectedColumn.getLength());
+                column.setActualColumnName(introspectedColumn.getActualColumnName());
+                column.setJdbcType(introspectedColumn.getJdbcTypeName());
                 column.setFieldName(introspectedColumn.getJavaProperty());
                 column.setDefaultValue(introspectedColumn.getDefaultValue());
                 column.setType(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
