@@ -33,13 +33,13 @@ public class CodeGenerator {
 
     public void generate(){
         try {
+            EntityMap entityMap = introspectEntityMap();
             File tmpDir =  new File(CodeGenerator.class.getResource("/template").getPath());
             Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
             cfg.setDirectoryForTemplateLoading(tmpDir);
             cfg.setDefaultEncoding(properties.getProperty("encoding"));
             cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
             cfg.setLogTemplateExceptions(false);
-            EntityMap entityMap = introspectEntityMap();
             String outputdir = properties.getProperty("outputdir");
             File[] files = tmpDir.listFiles();
             for(File file:files){

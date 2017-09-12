@@ -7,7 +7,7 @@
     <div id="childTopBar" style="display:none;">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li><a href="@{staticResPath}/index.html">主页</a></li>
+                <li><a href="${dollar}{staticResPath}/index.html">主页</a></li>
                 <li><span>${ftl_description}管理</span></li>
                 <li class="active"><span>${ftl_description}管理</span></li>
             </ol>
@@ -25,9 +25,9 @@
                 </header>-->
                 <div class="main-box-body clearfix modulecontainer">
                     <!-- 查询表单，请设置id=queryForm，以及返回vo.Result的action -->
-                    <form id="queryForm" action="@{staticResPath}/${entityName?uncap_first}/find.ajax"
-                          data-enableFlagSwitch-url="@{staticResPath}/${entityName?uncap_first}/enableFlagSwitch.ajax"
-                          data-delete-url="@{staticResPath}/${entityName?uncap_first}/delete.ajax">
+                    <form id="queryForm" action="${dollar}{staticResPath}/${entityName?uncap_first}/find.ajax"
+                          data-enableFlagSwitch-url="${dollar}{staticResPath}/${entityName?uncap_first}/enableFlagSwitch.ajax"
+                          data-delete-url="${dollar}{staticResPath}/${entityName?uncap_first}/delete.ajax">
                         <div class="module moduleSearch clearfix">
                             <div class="row">
                                 <div class="item clear">
@@ -71,12 +71,12 @@
             <div class="main-box clearfix">
                 <header class="main-box-header clearfix">
                     <h2 class="pull-right">
-					<permit.oauth hasPermission="${entityName?uncap_first}Manage:add">
-                        <a href="@{staticResPath}/${entityName?uncap_first}/add.html" class="btn btn-default pull-left">
+					<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:add">
+                        <a href="${dollar}{staticResPath}/${entityName?uncap_first}/add.html" class="btn btn-default pull-left">
                             <i class="fa fa-plus-circle"></i>
                             <span>新建</span>
                         </a>
-					</permit.oauth>
+					</${at}permit.oauth>
                     </h2>
                 </header>
 
@@ -109,9 +109,9 @@
                                 <#else>
                                 <td class="text-center">
                                     <div class="onoffswitch" 
-									<permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
+									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
 									v-on:click="enableFlagSwitch(this)"
-									</permit.oauth>
+									</${at}permit.oauth>
 									>
                                         <input type="checkbox" class="onoffswitch-checkbox" name="onoffswitch{{index}}" id="myonoffswitch{{index}}"
                                                v-bind:checked="item.enableFlag==1" >
@@ -125,22 +125,22 @@
                                 </#if>
                             </#list>
                                 <td class="text-center">
-									<permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
-                                    <a href="@{staticResPath}/${entityName?uncap_first}/edit/{{item.${pk}}}.html" class="table-link" >
+									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
+                                    <a href="${dollar}{staticResPath}/${entityName?uncap_first}/edit/{{item.${pk}}}.html" class="table-link" >
 											<span class="fa-stack">
 												<i class="fa fa-square fa-stack-2x"></i>
 												<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 											</span>
                                     </a>
-									</permit.oauth>
-									<permit.oauth hasPermission="${entityName?uncap_first}Manage:delete">
+									</${at}permit.oauth>
+									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:delete">
                                     <a href="#" class="table-link danger" v-on:click="deleteForm(this)">
 											<span class="fa-stack">
 												<i class="fa fa-square fa-stack-2x"></i>
 												<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
 											</span>
                                     </a>
-									</permit.oauth>
+									</${at}permit.oauth>
                                 </td>
 
                             </tr>
@@ -149,7 +149,7 @@
 
                         <!-- 数据表格分页开始-->
                         <div>
-                        <include '../../common/pagination.ftl'/>
+                        <${jing}include '../../common/pagination.ftl'/>
                         </div>
                         <!-- 数据表格分页结束-->
                     </div>
@@ -160,5 +160,5 @@
 
 </div>
 
-<script src="@{staticResPath}/resources/js/screen/${entityName?uncap_first}/find.js?v=20170822"></script>
+<script src="${dollar}{staticResPath}/resources/js/screen/${entityName?uncap_first}/find.js?v=20170822"></script>
 </body>

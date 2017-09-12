@@ -28,7 +28,7 @@
     <include refid="Base_VO_Column_List" />
     from ${tableName} a
 
-    where a.${pkA} = @{${pk},jdbcType=VARCHAR}
+    where a.${pkA} = ${jing}{${pk},jdbcType=VARCHAR}
   </select>
   <insert id="insert" parameterType="com.a7space.dao.po.operate.${entityName}PO" >
     insert into ${tableName} (
@@ -38,7 +38,7 @@
     )
     values (
     <#list columns as po>
-    @{${po.fieldName},jdbcType=${po.jdbcType}}<#if (po_has_next)>,</#if>
+    ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}<#if (po_has_next)>,</#if>
     </#list>
     )
   </insert>
@@ -48,12 +48,12 @@
         <#list columns as po>
         <#if (po.isPk != 'Y')>
         <if test="${po.fieldName} != null" >
-            ${po.actualColumnName} = @{${po.fieldName},jdbcType=${po.jdbcType}},
+            ${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}},
         </if>
         </#if>
         </#list>
     </set>
-    where ${pkA} = @{${pk},jdbcType=VARCHAR}
+    where ${pkA} = ${jing}{${pk},jdbcType=VARCHAR}
   </update>
 
     <select id="selectBySelectiveByPage" resultMap="ResultMapWithVO" parameterType="com.a7space.dao.vo.operate.${entityName}VO" >
@@ -63,7 +63,7 @@
     <where >
         <#list columns as po>
         <if test="${po.fieldName} != null" >
-            and a.${po.actualColumnName} = @{${po.fieldName},jdbcType=${po.jdbcType}}
+            and a.${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}
         </if>
         </#list>
     </where>

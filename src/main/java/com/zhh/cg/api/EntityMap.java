@@ -40,6 +40,15 @@ public class EntityMap {
     //主键的数据库字段名
     private String pkA;
 
+    //特殊符号 ‘#’用来替换
+    private String jing = "#";
+
+    //特殊符号 ‘@’用来替换
+    private String at = "@";
+
+    //特殊符号 ‘$’用来替换
+    private String dollar = "$";
+
     public String getEntityPackage() {
         return entityPackage;
     }
@@ -118,5 +127,17 @@ public class EntityMap {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getJing() {
+        return jing;
+    }
+
+    public String getAt() {
+        return at;
+    }
+
+    public String getDollar() {
+        return dollar;
     }
 }
