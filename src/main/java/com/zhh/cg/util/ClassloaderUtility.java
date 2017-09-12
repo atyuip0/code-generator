@@ -13,7 +13,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package com.zhh.cg.util;
 
 import java.io.File;
@@ -26,7 +25,7 @@ import java.util.List;
 /**
  * This class holds methods useful for constructing custom classloaders.
  * 
- * @author Jeff Butler
+ * @author zhanghaihe
  * 
  */
 public class ClassloaderUtility {

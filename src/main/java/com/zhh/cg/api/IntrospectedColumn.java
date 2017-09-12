@@ -12,8 +12,7 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- */
-package com.zhh.cg.api;
+ */package com.zhh.cg.api;
 
 import com.zhh.cg.api.java.FullyQualifiedJavaType;
 import com.zhh.cg.db.config.Context;
@@ -26,7 +25,7 @@ import java.util.Properties;
  * This class holds information about an introspected column. The class has
  * utility methods useful for generating iBATIS objects.
  * 
- * @author Jeff Butler
+ * @author zhanghaihe
  */
 public class IntrospectedColumn {
     protected String actualColumnName;

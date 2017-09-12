@@ -1,4 +1,3 @@
-
 package com.a7space.operate.service.${entityPackage};
 
 

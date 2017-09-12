@@ -8,22 +8,31 @@ package com.zhh.cg.api;
  */
 public class Column {
 
+    //字段注释
     private String content;
 
+    //是否为空（'Y','N'）
     private String isNull;
 
+    //字段长度
     private Integer length;
 
+    //字段Java类型
     private String type;
 
+    //字段数据库名
     private String actualColumnName;
 
+    // 字段数据库类型
     private String jdbcType;
 
+    // 字段
     private String fieldName;
 
+    //是否主键
     private String isPk;
 
+    //默认值
     private String defaultValue;
 
     public String getContent() {

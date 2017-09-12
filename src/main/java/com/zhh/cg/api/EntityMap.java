@@ -10,37 +10,35 @@ import java.util.List;
  */
 public class EntityMap {
 
-    //基础业务包路径
-    private String bussiPackage;
-
-    //业务包名
+    //业务包
     private String entityPackage;
 
+    //作者
     private String author;
 
+    //业务名
     private String entityName;
 
+    //表名
     private String tableName;
 
+    //业务页面包
     private String pagePackage;
 
+    //业务描述
     private String ftl_description;
 
+    //创建时间
     private String ftl_create_time;
 
+    //字段集合
     private List<Column> columns;
 
+    //主键
     private String pk;
 
+    //主键的数据库字段名
     private String pkA;
-
-    public String getBussiPackage() {
-        return bussiPackage;
-    }
-
-    public void setBussiPackage(String bussiPackage) {
-        this.bussiPackage = bussiPackage;
-    }
 
     public String getEntityPackage() {
         return entityPackage;

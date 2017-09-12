@@ -13,11 +13,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package com.zhh.cg.api.java;
 
 /**
- * @author Jeff Butler
+ * @author zhanghaihe
  * 
  */
 public class PrimitiveTypeWrapper extends FullyQualifiedJavaType {

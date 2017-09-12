@@ -12,15 +12,14 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- */
-package com.zhh.cg.util.messages;
+ */package com.zhh.cg.util.messages;
 
 import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
- * @author Jeff Butler
+ * @author zhanghaihe
  */
 public class Messages {
     private static final String BUNDLE_NAME = "org.mybatis.generator.internal.util.messages.messages"; //$NON-NLS-1$
