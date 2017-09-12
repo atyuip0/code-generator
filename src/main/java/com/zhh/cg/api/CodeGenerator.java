@@ -82,7 +82,7 @@ public class CodeGenerator {
         entityMap.setFtl_create_time(LocalDateTime.now().toString());
         entityMap.setEntityPackage(properties.getProperty("entity_package"));
         entityMap.setPagePackage(properties.getProperty("page_package"));
-        entityMap.setFtl_description(properties.getProperty("bussi_description"));
+        entityMap.setFtl_description(properties.getProperty("ftl_description"));
         entityMap.setAuthor(properties.getProperty("author"));
         List<Column> columns = new ArrayList<Column>();
         entityMap.setColumns(columns);
