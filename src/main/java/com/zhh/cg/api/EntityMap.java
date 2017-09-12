@@ -16,6 +16,8 @@ public class EntityMap {
     //业务包名
     private String entityPackage;
 
+    private String author;
+
     private String entityName;
 
     private String tableName;
@@ -110,5 +112,13 @@ public class EntityMap {
 
     public void setPagePackage(String pagePackage) {
         this.pagePackage = pagePackage;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

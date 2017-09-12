@@ -7,6 +7,14 @@ import com.feitian.commons.paginator.model.PageList;
 import com.lee.dao.vo.common.Result;
 import com.lee.dao.vo.operate.${entityName}VO;
 
+/**
+* @Title: Service
+* @Description: ${ftl_description}
+* @author ${author}
+* @date ${ftl_create_time}
+* @version V1.0
+*
+*/
 public interface ${entityName}Service{
 
     int insert(${entityName}VO record);

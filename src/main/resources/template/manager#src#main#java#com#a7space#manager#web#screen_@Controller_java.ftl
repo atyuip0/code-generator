@@ -39,7 +39,7 @@ import javax.validation.Valid;
 /**
 * @Title: Controller
 * @Description: ${ftl_description}
-* @author zhangdaihao
+* @author ${author}
 * @date ${ftl_create_time}
 * @version V1.0
 *

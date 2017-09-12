@@ -31,11 +31,10 @@ public class CodeGenerator {
         this.properties = PropertiesUtils.loadProps("/cg-config.properties");
     }
 
-
     public void generate(){
         try {
             File tmpDir =  new File(CodeGenerator.class.getResource("/template").getPath());
-            Configuration cfg = new Configuration(Configuration.VERSION_2_3_26);
+            Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
             cfg.setDirectoryForTemplateLoading(tmpDir);
             cfg.setDefaultEncoding(properties.getProperty("encoding"));
             cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
@@ -85,7 +84,7 @@ public class CodeGenerator {
         entityMap.setEntityPackage(properties.getProperty("entity_package"));
         entityMap.setPagePackage(properties.getProperty("page_package"));
         entityMap.setFtl_description(properties.getProperty("bussi_description"));
-        entityMap.setBussiPackage("");
+        entityMap.setAuthor(properties.getProperty("author"));
         List<Column> columns = new ArrayList<Column>();
         entityMap.setColumns(columns);
         try {

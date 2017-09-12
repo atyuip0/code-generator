@@ -9,7 +9,7 @@ import com.lee.dao.po.operate.${entityName}PO;
 /**   
  * @Title: Mapper
  * @Description: ${ftl_description}
- * @author zhanghaihe
+ * @author ${author}
  * @date ${ftl_create_time}
  * @version V1.0   
  *
