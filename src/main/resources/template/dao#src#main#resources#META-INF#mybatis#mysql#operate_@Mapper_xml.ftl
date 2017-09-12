@@ -14,15 +14,15 @@
 
     </resultMap>
   <sql id="Base_Column_List" >
-  <#list columns as po>
-  ${po.actualColumnName}<#if (po_has_next)>,</#if>
-  </#list>
+    <#list columns as po>
+    ${po.actualColumnName}<#if (po_has_next)>,</#if>
+    </#list>
   </sql>
-    <sql id="Base_VO_Column_List" >
+  <sql id="Base_VO_Column_List" >
     <#list columns as po>
     a.${po.actualColumnName}<#if (po_has_next)>,</#if>
     </#list>
-    </sql>
+  </sql>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithVO" parameterType="java.lang.String" >
     select 
     <include refid="Base_VO_Column_List" />
@@ -32,14 +32,14 @@
   </select>
   <insert id="insert" parameterType="com.a7space.dao.po.operate.${entityName}PO" >
     insert into ${tableName} (
-    <#list columns as po>
-    ${po.actualColumnName}<#if (po_has_next)>,</#if>
-    </#list>
+        <#list columns as po>
+        ${po.actualColumnName}<#if (po_has_next)>,</#if>
+        </#list>
     )
     values (
-    <#list columns as po>
-    ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}<#if (po_has_next)>,</#if>
-    </#list>
+        <#list columns as po>
+        ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}<#if (po_has_next)>,</#if>
+        </#list>
     )
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.a7space.dao.po.operate.${entityName}PO" >
@@ -48,7 +48,7 @@
         <#list columns as po>
         <#if (po.isPk != 'Y')>
         <if test="${po.fieldName} != null" >
-            ${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}},
+        ${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}},
         </if>
         </#if>
         </#list>
@@ -56,16 +56,16 @@
     where ${pkA} = ${jing}{${pk},jdbcType=VARCHAR}
   </update>
 
-    <select id="selectBySelectiveByPage" resultMap="ResultMapWithVO" parameterType="com.a7space.dao.vo.operate.${entityName}VO" >
+  <select id="selectBySelectiveByPage" resultMap="ResultMapWithVO" parameterType="com.a7space.dao.vo.operate.${entityName}VO" >
     select
     <include refid="Base_VO_Column_List" />
     from ${tableName} a
     <where >
         <#list columns as po>
         <if test="${po.fieldName} != null" >
-            and a.${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}
+        and a.${po.actualColumnName} = ${jing}{${po.fieldName},jdbcType=${po.jdbcType}}
         </if>
         </#list>
     </where>
-    </select>
+  </select>
 </mapper>
