@@ -44,13 +44,13 @@ result=${entityName?uncap_first}Mapper.insert(${entityName?uncap_first}PO);
 logger.error("error:",e);
 }
 return result;
-}                                                                                              com.lee.dao.mapper.operate
+}
 
 @Override
-public ${entityName}VO selectByPrimaryKey(String companyId) {
+public ${entityName}VO selectByPrimaryKey(String ${pk}) {
 ${entityName}VO result=null;
 try {
-result=${entityName?uncap_first}Mapper.selectByPrimaryKey(companyId);
+result=${entityName?uncap_first}Mapper.selectByPrimaryKey(${pk});
 } catch (Exception e) {
 logger.error("error:",e);
 }

@@ -166,8 +166,8 @@ ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
     public Result deleteAJAX(HttpServletRequest request){
     Result result=new Result();
     try {
-    String id=request.getParameter("entityId");
-    if(StringUtils.isBlank(id)){
+    String ${pk}=request.getParameter("${pk}");
+    if(StringUtils.isBlank(${pk})){
     result.setErrorMessage("缺少关键参数!");
     return result;
     }
@@ -175,7 +175,7 @@ ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
     Object object=SecurityUtils.getSubject();
     AccessUserPO accessUserPO=JSONObject.toJavaObject((JSONObject)object, AccessUserPO.class);
 ${entityName}VO ${entityName?uncap_first}VO=new ${entityName}VO();
-${entityName?uncap_first}VO.set${pk?cap_first}(id);
+${entityName?uncap_first}VO.set${pk?cap_first}(${pk});
 ${entityName?uncap_first}VO.setDeleteFlag(Constant.DELETE_FLAG_DELETED);
 ${entityName?uncap_first}VO.setUpdatedBy(accessUserPO.getUserName());
 ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
@@ -197,8 +197,8 @@ ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
     public Result enableFlagSwitch(HttpServletRequest request){
     Result result=new Result();
     try {
-    String id=request.getParameter("${pk}");
-    if(StringUtils.isBlank(id)){
+    String ${pk}=request.getParameter("${pk}");
+    if(StringUtils.isBlank(${pk})){
     result.setErrorMessage("缺少关键参数!");
     return result;
     }
@@ -207,7 +207,7 @@ ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
     AccessUserPO accessUserPO=JSONObject.toJavaObject((JSONObject)object, AccessUserPO.class);
 
 ${entityName}VO ${entityName?uncap_first}VO=new ${entityName}VO();
-${entityName?uncap_first}VO.set${pk?cap_first}(id);
+${entityName?uncap_first}VO.set${pk?cap_first}(${pk});
 ${entityName?uncap_first}VO.setEnableFlag(1^Integer.valueOf(enableFlag));
 ${entityName?uncap_first}VO.setUpdatedBy(accessUserPO.getUserName());
 ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
@@ -218,23 +218,6 @@ ${entityName?uncap_first}VO.setUpdatedTime(DateUtil.getCurrentDate());
     }
     } catch (Exception e) {
     result.setErrorMessage("操作失败！");
-    logger.error("error:",e);
-    }
-    return result;
-    }
-
-    @ResponseBody
-    @RequestMapping("/get${entityName}SelectOption.ajax")
-    @RequiresAuthentication
-    public Result get${entityName}SelectOption(HttpServletRequest request){
-    Result result=new Result();
-    try {
-    Object subject=SecurityUtils.getSubject();
-    if(subject!=null){
-    AccessUserPO accessUserPO=JSONObject.toJavaObject((JSONObject)subject, AccessUserPO.class);
-    result=${entityName?uncap_first}Service.get${entityName}SelectOption(accessUserPO,accessUserPO.getCompanyId());
-    }
-    } catch (Exception e) {
     logger.error("error:",e);
     }
     return result;

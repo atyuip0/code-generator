@@ -48,7 +48,8 @@ public class CodeGenerator {
                 Template temp = cfg.getTemplate(tempName);
 
                 String outFileNmae = "com#[]#ddd#dd_@PO_js.ftl";
-                outFileNmae = tempName.replace("[]",entityMap.getEntityPackage());
+                outFileNmae = tempName.replace("[entityPackage]",entityMap.getEntityPackage());
+                outFileNmae = outFileNmae.replace("[pagePackage]",entityMap.getEntityPackage());
                 outFileNmae = outFileNmae.replace("@",entityMap.getEntityName());
                 String[] ss1 = outFileNmae.split("\\.");
                 String[] ss2 = ss1[0].split("_");
@@ -82,6 +83,7 @@ public class CodeGenerator {
         EntityMap entityMap = new EntityMap();
         entityMap.setFtl_create_time(LocalDateTime.now().toString());
         entityMap.setEntityPackage(properties.getProperty("entity_package"));
+        entityMap.setPagePackage(properties.getProperty("page_package"));
         entityMap.setFtl_description(properties.getProperty("bussi_description"));
         entityMap.setBussiPackage("");
         List<Column> columns = new ArrayList<Column>();

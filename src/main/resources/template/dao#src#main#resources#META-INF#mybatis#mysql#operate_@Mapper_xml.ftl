@@ -63,7 +63,7 @@
     <where >
         <#list columns as po>
         <if test="${po.fieldName} != null" >
-            and a.${po.actualColumnName} = @{${po.fieldName},jdbcType=${po.jdbcType}},
+            and a.${po.actualColumnName} = @{${po.fieldName},jdbcType=${po.jdbcType}}
         </if>
         </#list>
     </where>

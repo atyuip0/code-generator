@@ -20,6 +20,8 @@ public class EntityMap {
 
     private String tableName;
 
+    private String pagePackage;
+
     private String ftl_description;
 
     private String ftl_create_time;
@@ -100,5 +102,13 @@ public class EntityMap {
 
     public void setPkA(String pkA) {
         this.pkA = pkA;
+    }
+
+    public String getPagePackage() {
+        return pagePackage;
+    }
+
+    public void setPagePackage(String pagePackage) {
+        this.pagePackage = pagePackage;
     }
 }
