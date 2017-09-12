@@ -1,11 +1,11 @@
 
-package com.lee.operate.service.${entityPackage};
+package com.a7space.operate.service.${entityPackage};
 
 
-import com.feitian.commons.paginator.model.PageBounds;
-import com.feitian.commons.paginator.model.PageList;
-import com.lee.dao.vo.common.Result;
-import com.lee.dao.vo.operate.${entityName}VO;
+import com.a7space.commons.paginator.model.PageBounds;
+import com.a7space.commons.paginator.model.PageList;
+import com.a7space.dao.vo.common.Result;
+import com.a7space.dao.vo.operate.${entityName}VO;
 
 /**
 * @Title: Service

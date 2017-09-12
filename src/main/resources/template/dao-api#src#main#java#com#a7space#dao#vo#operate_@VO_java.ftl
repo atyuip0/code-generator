@@ -1,6 +1,6 @@
-package com.lee.dao.vo.operate;
+package com.a7space.dao.vo.operate;
 
-import com.lee.dao.po.operate.${entityName}PO;
+import com.a7space.dao.po.operate.${entityName}PO;
 
 /**
  * @Title: Entity

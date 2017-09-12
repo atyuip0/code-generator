@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.lee.dao.mapper.operate.${entityName}Mapper" >
-  <resultMap id="BaseResultMap" type="com.lee.dao.po.operate.${entityName}PO" >
+<mapper namespace="com.a7space.dao.mapper.operate.${entityName}Mapper" >
+  <resultMap id="BaseResultMap" type="com.a7space.dao.po.operate.${entityName}PO" >
       <#list columns as po>
       <#if (po.isPk == 'Y')>
       <id column="${po.actualColumnName}" property="${po.fieldName}" jdbcType="${po.jdbcType}" />
@@ -10,7 +10,7 @@
       </#if>
       </#list>
   </resultMap>
-    <resultMap id="ResultMapWithVO" type="com.lee.dao.vo.operate.${entityName}VO" extends="BaseResultMap">
+    <resultMap id="ResultMapWithVO" type="com.a7space.dao.vo.operate.${entityName}VO" extends="BaseResultMap">
 
     </resultMap>
   <sql id="Base_Column_List" >
@@ -30,7 +30,7 @@
 
     where a.${pkA} = @{${pk},jdbcType=VARCHAR}
   </select>
-  <insert id="insert" parameterType="com.lee.dao.po.operate.${entityName}PO" >
+  <insert id="insert" parameterType="com.a7space.dao.po.operate.${entityName}PO" >
     insert into ${tableName} (
     <#list columns as po>
     ${po.actualColumnName}<#if (po_has_next)>,</#if>
@@ -42,7 +42,7 @@
     </#list>
     )
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lee.dao.po.operate.${entityName}PO" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.a7space.dao.po.operate.${entityName}PO" >
     update ${tableName}
     <set >
         <#list columns as po>
@@ -56,7 +56,7 @@
     where ${pkA} = @{${pk},jdbcType=VARCHAR}
   </update>
 
-    <select id="selectBySelectiveByPage" resultMap="ResultMapWithVO" parameterType="com.lee.dao.vo.operate.${entityName}VO" >
+    <select id="selectBySelectiveByPage" resultMap="ResultMapWithVO" parameterType="com.a7space.dao.vo.operate.${entityName}VO" >
     select
     <include refid="Base_VO_Column_List" />
     from ${tableName} a

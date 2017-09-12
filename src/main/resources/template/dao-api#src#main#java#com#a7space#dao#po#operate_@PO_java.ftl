@@ -1,4 +1,4 @@
-package com.lee.dao.po.operate;
+package com.a7space.dao.po.operate;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import javax.xml.soap.Text;
 import java.sql.Blob;
 
-import com.lee.dao.po.common.BasePO;
+import com.a7space.dao.po.common.BasePO;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 

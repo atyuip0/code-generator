@@ -1,23 +1,22 @@
-package com.lee.manager.web.screen;
+package com.a7space.manager.web.screen;
 
-import com.lee.dao.vo.operate.${entityName}VO;
-import com.lee.operate.service.${entityPackage}.${entityName}Service;
+import com.a7space.dao.vo.operate.${entityName}VO;
+import com.a7space.operate.service.${entityPackage}.${entityName}Service;
 
-<#-- restful 通用方法生成 -->
 import javax.servlet.http.HttpServletRequest;
-import com.feitian.commons.authority.annotation.RequiresPermissions;
-import com.feitian.commons.authority.annotation.RequiresAuthentication;
+import com.a7space.commons.authority.annotation.RequiresPermissions;
+import com.a7space.commons.authority.annotation.RequiresAuthentication;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
-import com.feitian.commons.authority.SecurityUtils;
-import com.feitian.commons.paginator.model.Order;
-import com.feitian.commons.paginator.model.PageBounds;
-import com.feitian.commons.paginator.model.PageList;
-import com.feitian.commons.utils.Constant;
-import com.feitian.commons.utils.DateUtil;
-import com.feitian.commons.utils.StringUtils;
-import com.feitian.commons.utils.UUIDCreator;
+import com.a7space.commons.authority.SecurityUtils;
+import com.a7space.commons.paginator.model.Order;
+import com.a7space.commons.paginator.model.PageBounds;
+import com.a7space.commons.paginator.model.PageList;
+import com.a7space.commons.utils.Constant;
+import com.a7space.commons.utils.DateUtil;
+import com.a7space.commons.utils.StringUtils;
+import com.a7space.commons.utils.UUIDCreator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,14 +26,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.lee.dao.po.operate.AccessUserPO;
-import com.lee.dao.vo.common.Result;
+import com.a7space.dao.po.operate.AccessUserPO;
+import com.a7space.dao.vo.common.Result;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-<#-- restful 通用方法生成 -->
 
 /**
 * @Title: Controller

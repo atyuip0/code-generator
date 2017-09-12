@@ -1,12 +1,12 @@
-package com.lee.operate.service.${entityPackage}.impl;
+package com.a7space.operate.service.${entityPackage}.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
-import com.feitian.commons.paginator.model.Order;
-import com.feitian.commons.paginator.model.PageBounds;
-import com.feitian.commons.paginator.model.PageList;
-import com.feitian.commons.utils.BeanUtils;
-import com.feitian.commons.utils.StringUtils;
+import com.a7space.commons.paginator.model.Order;
+import com.a7space.commons.paginator.model.PageBounds;
+import com.a7space.commons.paginator.model.PageList;
+import com.a7space.commons.utils.BeanUtils;
+import com.a7space.commons.utils.StringUtils;
 import com.lee.dao.mapper.operate.AccessAuthorityMapper;
 import com.lee.dao.mapper.operate.${entityName}Mapper;
 import com.lee.dao.po.operate.AccessAuthorityPO;

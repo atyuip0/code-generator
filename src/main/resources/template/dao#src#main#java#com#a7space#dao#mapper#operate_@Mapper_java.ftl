@@ -1,9 +1,9 @@
-package com.lee.dao.po.operate;
+package com.a7space.dao.po.operate;
 
-import com.feitian.commons.paginator.model.PageBounds;
-import com.feitian.commons.paginator.model.PageList;
-import com.lee.dao.vo.operate.${entityName}VO;
-import com.lee.dao.po.operate.${entityName}PO;
+import com.a7space.commons.paginator.model.PageBounds;
+import com.a7space.commons.paginator.model.PageList;
+import com.a7space.dao.vo.operate.${entityName}VO;
+import com.a7space.dao.po.operate.${entityName}PO;
 
 
 /**   
