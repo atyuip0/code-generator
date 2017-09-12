@@ -7,7 +7,7 @@
     <div id="childTopBar" style="display:none;">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li><a href="#staticResPath#/index.html">主页</a></li>
+                <li><a href="@{staticResPath}/index.html">主页</a></li>
                 <li><span>${ftl_description}管理</span></li>
                 <li class="active"><span>新建${ftl_description}</span></li>
             </ol>
@@ -16,7 +16,7 @@
     <!-- 顶部导航部分结束 -->
 
     <!-- 表单部分开始 -->
-    <form id="saveForm" action="#staticResPath#/${entityName?uncap_first}/add.ajax" data-find-url="#staticResPath#/${entityName?uncap_first}/find.html">
+    <form id="saveForm" action="@{staticResPath}/${entityName?uncap_first}/add.ajax" data-find-url="@{staticResPath}/${entityName?uncap_first}/find.html">
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-box">
@@ -63,5 +63,5 @@
 
 </div>
 
-<script src="#staticResPath#/resources/js/screen/${entityName?uncap_first}/add.js?v=20170822"></script>
+<script src="@{staticResPath}/resources/js/screen/${entityName?uncap_first}/add.js?v=20170822"></script>
 </body>

@@ -24,6 +24,4 @@ public interface ${entityName}Service{
 
     PageList<${entityName}VO> queryByPage(PageBounds pageBounds,${entityName}VO ${entityName}VO);
 
-    Result get${entityName}SelectOption(String userId, String companyId);
-
 }
