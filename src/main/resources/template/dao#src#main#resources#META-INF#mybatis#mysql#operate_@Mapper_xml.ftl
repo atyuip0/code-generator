@@ -10,9 +10,9 @@
       </#if>
       </#list>
   </resultMap>
-    <resultMap id="ResultMapWithVO" type="com.a7space.dao.vo.operate.${entityName}VO" extends="BaseResultMap">
+  <resultMap id="ResultMapWithVO" type="com.a7space.dao.vo.operate.${entityName}VO" extends="BaseResultMap">
 
-    </resultMap>
+  </resultMap>
   <sql id="Base_Column_List" >
     <#list columns as po>
     ${po.actualColumnName}<#if (po_has_next)>,</#if>

@@ -8,10 +8,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,10 +31,11 @@ public class CodeGenerator {
     public void generate(){
         try {
             EntityMap entityMap = introspectEntityMap();
+            String encoding = properties.getProperty("encoding");
             File tmpDir =  new File(CodeGenerator.class.getResource("/template").getPath());
             Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
             cfg.setDirectoryForTemplateLoading(tmpDir);
-            cfg.setDefaultEncoding(properties.getProperty("encoding"));
+            cfg.setDefaultEncoding(encoding);
             cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
             cfg.setLogTemplateExceptions(false);
             String outputdir = properties.getProperty("outputdir");
@@ -45,30 +43,16 @@ public class CodeGenerator {
             for(File file:files){
                 String tempName = file.getName();
                 Template temp = cfg.getTemplate(tempName);
-
-                String outFileNmae = "com#[]#ddd#dd_@PO_js.ftl";
-                outFileNmae = tempName.replace("[entityPackage]",entityMap.getEntityPackage());
-                outFileNmae = outFileNmae.replace("[pagePackage]",entityMap.getEntityPackage());
-                outFileNmae = outFileNmae.replace("@",entityMap.getEntityName());
-                String[] ss1 = outFileNmae.split("\\.");
-                String[] ss2 = ss1[0].split("_");
-                String suffix = "."+ss2[2];
-                String fN = ss2[1]+suffix;
-                StringBuffer fP = new StringBuffer();
-                String[] ss3 = ss2[0].split("#");
-                for(String s:ss3) {
-                    fP.append(s).append(File.separator);
-                }
-                File outfile = new File(outputdir+File.separator+fP+fN);
+                String outFileNmae = getGenerateFileNmae(tempName,entityMap);
+                File outfile = new File(outputdir+File.separator+outFileNmae);
                 if (!outfile.getParentFile().exists()) {// 判断目标文件所在的目录是否存在
                     // 如果目标文件所在的文件夹不存在，则创建父文件夹
                     outfile.getParentFile().mkdirs();
                 }
                 outfile.createNewFile();
-                Writer out = new FileWriter(outfile);
+                OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(outfile),encoding);
                 temp.process(entityMap, out);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (TemplateException e) {
@@ -76,7 +60,22 @@ public class CodeGenerator {
         }
     }
 
-
+    private String getGenerateFileNmae(String str,EntityMap entityMap){
+        String outFileNmae = str;
+        outFileNmae = outFileNmae.replace("[entityPackage]",entityMap.getEntityPackage());
+        outFileNmae = outFileNmae.replace("[pagePackage]",entityMap.getPagePackage());
+        outFileNmae = outFileNmae.replace("@",entityMap.getEntityName());
+        String[] ss1 = outFileNmae.split("\\.");
+        String[] ss2 = ss1[0].split("_");
+        String suffix = "."+ss2[2];
+        String fN = ss2[1]+suffix;
+        StringBuffer fP = new StringBuffer();
+        String[] ss3 = ss2[0].split("#");
+        for(String s:ss3) {
+            fP.append(s).append(File.separator);
+        }
+        return fP+fN;
+    }
 
     private EntityMap introspectEntityMap(){
         EntityMap entityMap = new EntityMap();
