@@ -22,6 +22,7 @@ import java.util.Properties;
  * Time: 上午10:23
  */
 public class CodeGenerator {
+
     private Properties properties;
 
     public CodeGenerator(){
@@ -119,11 +120,9 @@ public class CodeGenerator {
                 column.setIsPk("N");
                 columns.add(column);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return entityMap;
     }
 
