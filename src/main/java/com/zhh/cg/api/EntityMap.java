@@ -41,13 +41,13 @@ public class EntityMap {
     private String pkA;
 
     //特殊符号 ‘#’用来替换
-    private String jing = "#";
+    private String j = "#";
 
     //特殊符号 ‘@’用来替换
     private String at = "@";
 
     //特殊符号 ‘$’用来替换
-    private String dollar = "$";
+    private String d = "$";
 
     public String getEntityPackage() {
         return entityPackage;
@@ -129,15 +129,15 @@ public class EntityMap {
         this.author = author;
     }
 
-    public String getJing() {
-        return jing;
+    public String getJ() {
+        return j;
     }
 
     public String getAt() {
         return at;
     }
 
-    public String getDollar() {
-        return dollar;
+    public String getD() {
+        return d;
     }
 }

@@ -7,7 +7,7 @@
     <div id="childTopBar" style="display:none;">
         <div class="col-lg-12">
             <ol class="breadcrumb">
-                <li><a href="${dollar}{staticResPath}/index.html">主页</a></li>
+                <li><a href="${d}{staticResPath}/index.html">主页</a></li>
                 <li><span>${ftl_description}管理</span></li>
                 <li class="active"><span>${ftl_description}管理</span></li>
             </ol>
@@ -25,9 +25,9 @@
                 </header>-->
                 <div class="main-box-body clearfix modulecontainer">
                     <!-- 查询表单，请设置id=queryForm，以及返回vo.Result的action -->
-                    <form id="queryForm" action="${dollar}{staticResPath}/${entityName?uncap_first}/find.ajax"
-                          data-enableFlagSwitch-url="${dollar}{staticResPath}/${entityName?uncap_first}/enableFlagSwitch.ajax"
-                          data-delete-url="${dollar}{staticResPath}/${entityName?uncap_first}/delete.ajax">
+                    <form id="queryForm" action="${d}{staticResPath}/${entityName?uncap_first}/find.ajax"
+                          data-enableFlagSwitch-url="${d}{staticResPath}/${entityName?uncap_first}/enableFlagSwitch.ajax"
+                          data-delete-url="${d}{staticResPath}/${entityName?uncap_first}/delete.ajax">
                         <div class="module moduleSearch clearfix">
                             <div class="row">
                                 <div class="item clear">
@@ -72,7 +72,7 @@
                 <header class="main-box-header clearfix">
                     <h2 class="pull-right">
 					<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:add">
-                        <a href="${dollar}{staticResPath}/${entityName?uncap_first}/add.html" class="btn btn-default pull-left">
+                        <a href="${d}{staticResPath}/${entityName?uncap_first}/add.html" class="btn btn-default pull-left">
                             <i class="fa fa-plus-circle"></i>
                             <span>新建</span>
                         </a>
@@ -126,7 +126,7 @@
                             </#list>
                                 <td class="text-center">
 									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
-                                    <a href="${dollar}{staticResPath}/${entityName?uncap_first}/edit/{{item.${pk}}}.html" class="table-link" >
+                                    <a href="${d}{staticResPath}/${entityName?uncap_first}/edit/{{item.${pk}}}.html" class="table-link" >
 											<span class="fa-stack">
 												<i class="fa fa-square fa-stack-2x"></i>
 												<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -149,7 +149,7 @@
 
                         <!-- 数据表格分页开始-->
                         <div>
-                        <${jing}include '../../common/pagination.ftl'/>
+                        <${j}include '../../common/pagination.ftl'/>
                         </div>
                         <!-- 数据表格分页结束-->
                     </div>
@@ -160,5 +160,5 @@
 
 </div>
 
-<script src="${dollar}{staticResPath}/resources/js/screen/${entityName?uncap_first}/find.js?v=20170822"></script>
+<script src="${d}{staticResPath}/resources/js/screen/${entityName?uncap_first}/find.js?v=20170822"></script>
 </body>
