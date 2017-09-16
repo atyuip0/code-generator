@@ -3,8 +3,7 @@ package com.zhh.cg;
 import com.zhh.cg.api.CodeGenerator;
 
 /**
- * []
- * User: zhanghaihe
+ * User: ${author}
  * Date: 17-8-28
  * Time: 上午10:24
  */

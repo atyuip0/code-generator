@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * []
  * User: zhanghaihe
  * Date: 17-8-28
  * Time: 上午10:23

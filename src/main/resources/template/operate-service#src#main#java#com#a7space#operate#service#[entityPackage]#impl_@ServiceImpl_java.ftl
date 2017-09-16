@@ -23,7 +23,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service(version="1.0.0")
+/**
+* @Title: ServiceImpl
+* @Description: ${ftl_description}
+* @author ${author}
+* @date ${ftl_create_time}
+* @version V1.0
+*
+*/
 public class ${entityName}ServiceImpl implements ${entityName}Service {
 
 

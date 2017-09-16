@@ -16,7 +16,6 @@ import static com.zhh.cg.util.JavaBeansUtil.getCamelCaseString;
 import static com.zhh.cg.util.StringUtility.stringHasValue;
 
 /**
- * []
  * User: zhanghaihe
  * Date: 17-8-28
  * Time: 上午11:01
