@@ -34,4 +34,10 @@ ${po.fieldName}:{
 $(function($) {
 
 });
-
+var bodyvue=new Vue({
+	el: '#vue-body',
+	mixins: [mixin_paging],
+    data: {},
+	mounted: function(){},
+    methods: {}
+});

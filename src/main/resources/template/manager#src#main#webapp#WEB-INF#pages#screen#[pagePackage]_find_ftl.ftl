@@ -110,10 +110,10 @@
                                 <td class="text-center">
                                     <div class="onoffswitch" 
 									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
-									v-on:click="enableFlagSwitch(this)"
+									v-on:click="enableFlagSwitch(item,index)"
 									</${at}permit.oauth>
 									>
-                                        <input type="checkbox" class="onoffswitch-checkbox" name="onoffswitch{{index}}" id="myonoffswitch{{index}}"
+                                        <input type="checkbox" class="onoffswitch-checkbox" :name="'onoffswitch'+index" :id="'myonoffswitch'+index"
                                                v-bind:checked="item.enableFlag==1" >
                                         <label class="onoffswitch-label">
                                             <div class="onoffswitch-inner"></div>
@@ -126,7 +126,7 @@
                             </#list>
                                 <td class="text-center">
 									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:edit">
-                                    <a href="${d}{staticResPath}/${entityName?uncap_first}/edit/{{item.${pk}}}.html" class="table-link" >
+                                    <a :href="'${d}{staticResPath}/${entityName?uncap_first}/edit/'+item.${pk}+'.html'" class="table-link" >
 											<span class="fa-stack">
 												<i class="fa fa-square fa-stack-2x"></i>
 												<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -134,7 +134,7 @@
                                     </a>
 									</${at}permit.oauth>
 									<${at}permit.oauth hasPermission="${entityName?uncap_first}Manage:delete">
-                                    <a href="#" class="table-link danger" v-on:click="deleteForm(this)">
+                                    <a href="#" class="table-link danger" v-on:click="deleteForm(item,index)">
 											<span class="fa-stack">
 												<i class="fa fa-square fa-stack-2x"></i>
 												<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
