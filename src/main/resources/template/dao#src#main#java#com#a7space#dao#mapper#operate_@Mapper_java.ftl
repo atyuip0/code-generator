@@ -1,12 +1,11 @@
-package com.a7space.dao.po.operate;
+package com.a7space.dao.mapper.operate;
 
 import com.a7space.commons.paginator.model.PageBounds;
 import com.a7space.commons.paginator.model.PageList;
 import com.a7space.dao.vo.operate.${entityName}VO;
 import com.a7space.dao.po.operate.${entityName}PO;
 
-
-/**   
+/**
  * @Title: Mapper
  * @Description: ${ftl_description}
  * @author ${author}
